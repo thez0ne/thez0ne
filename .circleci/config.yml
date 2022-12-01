@@ -45,7 +45,8 @@ jobs:
     docker:
       - image: cimg/node:18.0.0
     steps:
-      - checkout
+      - checkout:
+          path: ~/thez0ne
       - attach_workspace:
           at: ~/thez0ne/client
       - run:
@@ -56,6 +57,7 @@ jobs:
           command: "npm run lint"
 
   vitest:
+    working_directory: ~/thez0ne/client
     docker:
       - image: cimg/node:18.0.0
     steps:
@@ -72,6 +74,7 @@ jobs:
           path: ./coverage
 
   build:
+    working_directory: ~/thez0ne/client
     docker:
       - image: cimg/node:18.0.0
     steps:
