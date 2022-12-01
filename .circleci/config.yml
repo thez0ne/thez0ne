@@ -12,29 +12,20 @@ jobs:
     steps:
       - checkout:
           path: ~/thez0ne
-      
-      - run:
-          name: "ree"
-          command: "pwd"
-
       - run:
           name: "check node version"
           command: "node --version"
-
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package-lock.json" }}
             - v1-dependencies-
-
       - run:
           name: "install node_modules"
           command: "npm install"
-
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package-lock.json" }}
-
       - persist_to_workspace:
           root: ~/thez0ne/client
           paths:
@@ -50,9 +41,6 @@ jobs:
       - attach_workspace:
           at: ~/thez0ne/client
       - run:
-          name: "ree"
-          command: "ls"
-      - run:
           name: "run lint"
           command: "npm run lint"
 
@@ -67,11 +55,9 @@ jobs:
           at: ~/thez0ne/client
       - run:
           name: "run vitest"
-          command: "npm run test"
+          command: "npm run test:ci"
       - store_test_results:
-          path: ./reports
-      - store_artifacts:
-          path: ./coverage
+          path: ./test_results/result.xml
 
   build:
     working_directory: ~/thez0ne/client
