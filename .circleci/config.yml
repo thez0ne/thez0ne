@@ -46,11 +46,11 @@ jobs:
       - image: cimg/node:18.0.0
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/thez0ne/client
       - run:
           name: "ree"
           command: "ls"
-      - attach_workspace:
-          at: ~/thez0ne/client
       - run:
           name: "run lint"
           command: "npm run lint"
