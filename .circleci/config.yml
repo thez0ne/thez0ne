@@ -41,11 +41,14 @@ jobs:
             - node_modules/*
 
   lint:
+    working_directory: ~/thez0ne/client
     docker:
       - image: cimg/node:18.0.0
     steps:
-      - checkout:
-          path: ~/thez0ne
+      - checkout
+      - run:
+          name: "ree"
+          command: "ls"
       - attach_workspace:
           at: ~/thez0ne/client
       - run:
