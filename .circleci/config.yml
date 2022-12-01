@@ -11,6 +11,7 @@ jobs:
       - image: cimg/node:18.0.0
     steps:
       - checkout
+        path: ~/thez0ne
       
       - run:
           name: "ree"
