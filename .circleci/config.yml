@@ -15,7 +15,7 @@ jobs:
       
       - run:
           name: "ree"
-          command: "ls"
+          command: "pwd"
 
       - run:
           name: "check node version"
