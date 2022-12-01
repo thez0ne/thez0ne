@@ -36,7 +36,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package-lock.json" }}
 
       - persist_to_workspace:
-          root: ~/project
+          root: ~/thez0ne/client
           paths:
             - node_modules/*
 
@@ -46,7 +46,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: ~/project
+          at: ~/thez0ne/client
       - run:
           name: "run lint"
           command: "npm run lint"
@@ -57,7 +57,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: ~/project
+          at: ~/thez0ne/client
       - run:
           name: "run vitest"
           command: "npm run test"
@@ -72,7 +72,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: ~/project
+          at: ~/thez0ne/client
       - run:
           name: "build with Next.js"
           command: npm run build
