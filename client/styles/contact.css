@@ -1,0 +1,21 @@
+form {
+  min-width: 222px;
+}
+
+.contact-text {
+  min-width: 307px;
+}
+
+.submit-button {
+  background: #32e0ff;
+}
+
+.submit-button:hover {
+  background: #00d9ff;
+  /* background: #01c9c5; */
+}
+
+.submit-button:active {
+  /* background: #00b5d4; */
+  background: #017977;
+}
