@@ -4,11 +4,14 @@ services:
   nextjs:
     build: ./client
     ports:
-     - 3000:3000
+      - 3000:3000
   nginx:
     build: ./nginx
     ports:
-     - 80:80
+      - 80:80
+      - 443:443
+    volumes:
+      - /etc/letsencrypt/live/thez0ne.xyz:/etc/nginx/certs
   db:
     image: postgres:latest
     container_name: postgres
