@@ -2,7 +2,7 @@ import '@/styles/about.css';
 
 export default function About() {
   return (
-    <div id="about" className='text-xl flex flex-col text-center items-center justify-center min-h-screen min-w-full bg-gray-950'>
+    <div id="about" className='text-xl flex flex-col text-center items-center justify-center min-h-screen min-w-full text-white bg-gray-950'>
       <span className="text-4xl overflow-y-hidden font-medium">
         Hello!
       </span>
