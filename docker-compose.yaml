@@ -11,7 +11,7 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - /etc/letsencrypt/live/thez0ne.xyz:/etc/nginx/certs
+      - /etc/letsencrypt/archive/thez0ne.xyz:/etc/nginx/certs
   db:
     image: postgres:latest
     container_name: postgres
