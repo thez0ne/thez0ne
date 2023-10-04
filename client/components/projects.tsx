@@ -24,7 +24,7 @@ export default function Projects() {
       links: [
         {
           name: 'GITHUB',
-          url: 'https://github.com/neoJINXD/MilleniumArts',
+          url: 'https://github.com/thez0ne/Phoenix-Engine',
         },
         {
           name: 'DEMO',
