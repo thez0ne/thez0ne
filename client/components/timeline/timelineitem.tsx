@@ -42,7 +42,7 @@ function TimelineItem({ data }: any) {
         <div className="flex justify-between">
           <div className="my-2">
             <p className="font-semibold text-base mb-2">Job Description</p>
-            <div className="flex flex-col text-justify">
+            <div className="flex flex-col">
               {data.description.map((element: string, index: number) => (
                 <p key={index}>• {element}</p>
               ))}
