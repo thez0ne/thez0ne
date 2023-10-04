@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 function ProjectItem({ data }: any) {
   return (
     <li className="project-item rounded-3xl shadow-xl my-5 w-full">
@@ -5,11 +7,19 @@ function ProjectItem({ data }: any) {
       {/* <div className="rounded-md shadow-lg"> */}
       <div className="md:flex leading-none w-full">
         <div className="project-image flex-none md:shrink-0">
-          <img
+          <video
+            autoPlay
+            muted
+            loop
+            onContextMenu={e => e.preventDefault()}
+            src={data.image.src}
+            className="object-cover h-48 w-full md:h-full md:w-96 shadow-2xl"
+          />
+          {/* <img
             src={data.image.src}
             alt={data.image.alt}
             className="object-cover h-48 w-full md:h-full md:w-96 shadow-2xl"
-          />
+          /> */}
         </div>
 
         <div className="text-center flex flex-col text-gray-300 w-full">

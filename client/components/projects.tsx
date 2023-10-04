@@ -12,7 +12,7 @@ export default function Projects() {
       projecttype: 'Computer Graphics Development',
       inprogress: true,
       image: {
-        src: '/phoenix.gif',
+        src: '/phoenix.webm',
         alt: 'Rendering Demo from the Phoenix Engine',
       },
       technologies: [
@@ -40,7 +40,7 @@ export default function Projects() {
       title: 'Project: FEYGO',
       projecttype: 'Game Development',
       image: {
-        src: '/feygo.gif',
+        src: '/feygo.webm',
         alt: 'Gameplay of Project FEYGO',
       },
       technologies: [
@@ -71,7 +71,7 @@ export default function Projects() {
       title: 'ChronoBreak',
       projecttype: 'Game Development',
       image: {
-        src: '/chronobreak.gif',
+        src: '/chronobreak.webm',
         alt: 'Gameplay of Chronobreak',
       },
       technologies: [
