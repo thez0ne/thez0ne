@@ -1,4 +1,4 @@
-import { ProjectItem } from "./projectitem";
+import { ProjectItem } from './projectitem';
 
 function ProjectList(props: any) {
   const { className, data } = props;

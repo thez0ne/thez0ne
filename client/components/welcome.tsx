@@ -18,26 +18,26 @@ export default function Welcome() {
         <div className='flex justify-center space-x-7 min-w-full mt-3 select-none'>
           <a href='https://github.com/neoJINXD' target='_blank' rel='noopener noreferrer'>
             <Image
-              src="/github.svg"
+              src='/github.svg'
               width={45}
               height={45}
-              alt="GitHub"
+              alt='GitHub'
             />
           </a>
           <a href='https://the-z0ne.itch.io/' target='_blank' rel='noopener noreferrer'>
             <Image
-              src="/itchio.svg"
+              src='/itchio.svg'
               width={45}
               height={45}
-              alt="Itch.io"
+              alt='Itch.io'
             />
           </a>
           <a href='https://www.linkedin.com/in/anikpatel/' target='_blank' rel='noopener noreferrer'>
             <Image
-              src="/linkedin.svg"
+              src='/linkedin.svg'
               width={45}
               height={45}
-              alt="LinkedIn"
+              alt='LinkedIn'
             />
           </a>
         </div>
@@ -45,10 +45,10 @@ export default function Welcome() {
       <div className='flex justify-center mt-auto mb-3 select-none'>
         <Link href='#' scroll={false} onClick={() => smoothScrollToSection('about')}>
           <Image
-            src="/arrow-down.svg"
+            src='/arrow-down.svg'
             width={45}
             height={45}
-            alt="ArrowDown"
+            alt='ArrowDown'
           />
         </Link>
       </div>

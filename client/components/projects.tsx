@@ -12,7 +12,7 @@ export default function Projects() {
       projecttype: 'Computer Graphics Development',
       inprogress: true,
       image: {
-        src: '/phoenix.gif',
+        src: '/phoenix.webm',
         alt: 'Rendering Demo from the Phoenix Engine',
       },
       technologies: [
@@ -24,7 +24,7 @@ export default function Projects() {
       links: [
         {
           name: 'GITHUB',
-          url: 'https://github.com/neoJINXD/MilleniumArts',
+          url: 'https://github.com/thez0ne/Phoenix-Engine',
         },
         {
           name: 'DEMO',
@@ -40,7 +40,7 @@ export default function Projects() {
       title: 'Project: FEYGO',
       projecttype: 'Game Development',
       image: {
-        src: '/feygo.gif',
+        src: '/feygo.webm',
         alt: 'Gameplay of Project FEYGO',
       },
       technologies: [
@@ -71,7 +71,7 @@ export default function Projects() {
       title: 'ChronoBreak',
       projecttype: 'Game Development',
       image: {
-        src: '/chronobreak.gif',
+        src: '/chronobreak.webm',
         alt: 'Gameplay of Chronobreak',
       },
       technologies: [
@@ -100,9 +100,9 @@ export default function Projects() {
   ];
 
   return (
-    <div id="projects" className='flex flex-col items-center justify-center min-h-screen min-w-full bg-gray-950'>
-      <p className="font-bold mt-20 text-4xl p-12">Recent Projects</p>
-      <div className="container w-full">
+    <div id='projects' className='flex flex-col items-center justify-center min-h-screen min-w-full bg-gray-950'>
+      <p className='font-bold mt-20 text-4xl p-12'>Recent Projects</p>
+      <div className='container w-full'>
         <ProjectList className='' data={projects} />
       </div>
     </div>
