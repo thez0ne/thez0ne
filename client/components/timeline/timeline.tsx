@@ -24,8 +24,8 @@ function Timeline(props: any) {
 
   return (
     <div className={fullClassName}>
-      <div className="timeline-connector" />
-      <ul className="timeline">
+      <div className='timeline-connector' />
+      <ul className='timeline'>
         {data.map((data: any, index: number) => (
           <TimelineItem data={data} key={index} />
         ))}
@@ -33,8 +33,8 @@ function Timeline(props: any) {
         {Array(numItems)
           .fill(0)
           .map((_, i) => (
-            <span key={i} className="timeline-dotmark">
-              <div className="timeline-dot" />
+            <span key={i} className='timeline-dotmark'>
+              <div className='timeline-dot' />
             </span>
           ))}
       </ul>

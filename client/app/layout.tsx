@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
   },
   icons: {
-    shortcut: "./favicon.ico",
+    shortcut: './favicon.ico',
   },
   openGraph: {
     title: 'Anik Patel',
@@ -62,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={montserrat.className}>
         {children}
       </body>
