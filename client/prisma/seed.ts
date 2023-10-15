@@ -63,6 +63,46 @@ async function main() {
   });
   console.log({ project1 });
   console.log({ project2 });
+
+  const experience1 = await prisma.experience.upsert({
+    where: { name: 'Test Position' },
+    update: {},
+    create: {
+      name: "Test Position",
+      position: "Test Position",
+      company: "Company1",
+      date: "June - Dec 2022",
+      description: ['desc1', 'desc2'],
+      logo: {
+        create: {
+          path: '/genetec.svg',
+          alt: 'Genetec Logo',
+          link: 'https://www.genetec.com/',
+        }
+      }
+    },
+  });
+  const experience2 = await prisma.experience.upsert({
+    where: { name: 'Test Position2' },
+    update: {},
+    create: {
+      name: "Test Position2",
+      position: "Test Position2",
+      company: "Company2",
+      date: "June - Dec 2023",
+      description: ['desc3', 'desc4'],
+      logo: {
+        create: {
+          path: '/genetec.svg',
+          alt: 'Genetec Logo',
+          link: 'https://www.genetec.com/',
+        }
+      }
+    },
+  });
+
+  console.log({ experience1 });
+  console.log({ experience2 });
 }
 main()
   .then(() => prisma.$disconnect())

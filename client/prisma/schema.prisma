@@ -36,3 +36,22 @@ model Link {
   project   Project @relation(fields: [projectId], references: [id])
   projectId Int
 }
+
+model Experience {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  position    String
+  company     String
+  date        String
+  description String[]
+  logo        Logo?
+}
+
+model Logo {
+  id           Int        @id @default(autoincrement())
+  path         String
+  alt          String
+  link         String
+  experience   Experience @relation(fields: [experienceId], references: [id])
+  experienceId Int        @unique
+}
