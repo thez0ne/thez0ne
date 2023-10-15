@@ -3,6 +3,9 @@ version: "3"
 services:
   nextjs:
     build: ./client
+    depends_on:
+      db:
+        condition: service_healthy
     ports:
       - 3000:3000
   nginx:
