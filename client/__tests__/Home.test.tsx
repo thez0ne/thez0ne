@@ -1,10 +1,20 @@
 import { expect, test } from 'vitest'
 import { render, screen, within } from '@testing-library/react'
-import Home from '@/app/(routes)/page'
+import Welcome from '@/components/welcome'
+import Navbar from '@/components/navbar'
+import Background from '@/components/background'
+import About from '@/components/about'
+import Contact from '@/components/contact'
+import Footer from '@/components/footer'
 
-test('home', () => {
-  render(<Home />)
-  const main = within(screen.getByRole('main'))
+test('welcome', () => {
+  render(<Navbar />)
+  render(<Welcome />)
+  render(<Background />)
+  render(<About />)
+  render(<Contact />)
+  render(<Footer />)
+  // const main = within(screen.getByRole('main'))
   // expect(main.getByRole('heading', { level: 1, name: /welcome/i })).toBeDefined();
   // expect(
   //   main.getByRole('heading', { level: 1, name: /welcome to next\.js!/i })

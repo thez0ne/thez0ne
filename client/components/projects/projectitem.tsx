@@ -1,3 +1,5 @@
+'use client'
+
 function ProjectItem({ data }: any) {
   return (
     <li className='project-item rounded-3xl shadow-xl my-5 w-full'>
