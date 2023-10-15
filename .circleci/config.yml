@@ -63,8 +63,6 @@ jobs:
     working_directory: ~/thez0ne/client
     docker:
       - image: cimg/node:18.0.0
-    environment:
-      - DATABASE_URL: postgresql://username:password@localhost:5432/portfolio?schema=public
     steps:
       - checkout:
           path: ~/thez0ne
@@ -72,7 +70,7 @@ jobs:
           at: ~/thez0ne/client
       - run:
           name: "build with Next.js"
-          command: npm run build
+          command: npm run build:ci
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
