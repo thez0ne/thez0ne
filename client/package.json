@@ -5,6 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "prisma generate && next build",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate deploy",
+    "prisma:seed": "prisma db seed",
+    "prestart:docker": "npm run prisma:generate && npm run prisma:migrate && npm run prisma:seed",
+    "start:docker": "npm run build && next start",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest",
