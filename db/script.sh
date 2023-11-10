@@ -7,4 +7,4 @@ username=$DB_USER
 password=$DB_PASSWORD
 
 echo "Cleaning up old messages..."
-psql postgresql://$username:$password@$container:5432/$database -c "DELETE FROM \"Message\" WHERE \"sentAt\" < NOW() - INTERVAL '1 day'"
+psql postgresql://$username:$password@$container:5432/$database -c "DELETE FROM \"Message\" WHERE \"sentAt\" < NOW() - INTERVAL '30 day'"
