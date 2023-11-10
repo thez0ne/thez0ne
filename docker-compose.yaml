@@ -20,6 +20,7 @@ services:
       - 443:443
     volumes:
       - /etc/letsencrypt/archive/thez0ne.xyz:/etc/nginx/certs
+      - /etc/letsencrypt/archive/carbon.thez0ne.xyz:/etc/nginx/certs/carbon
   db:
     image: postgres:latest
     # build: ./db
