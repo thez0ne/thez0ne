@@ -4,24 +4,31 @@ import '@/styles/contact.css'
 
 import { useState } from 'react'
 import sendEmail from '@/utils/sendemail';
+import { z } from 'zod';
+import { ToastContainer } from 'react-toastify';
+
+
+export const FormSchema = z
+  .object({
+    email: z.string().min(1, 'Email is required').email('Email is invalid'),
+    name: z.string().min(1, 'Name is required'),
+    message: z.string().min(1, 'Message is required'),
+  });
 
 export type FormData = {
   name: string;
   email: string;
   message: string;
-  submitted: boolean;
 }
 
 export default function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    sendEmail({ name, email, message, submitted });
-    setSubmitted(true);
+    await sendEmail({ name, email, message });
   };
 
   return (
@@ -68,6 +75,7 @@ export default function Contact() {
         >
           Send
         </button>
+        <ToastContainer />
       </form>
     </div>
   )
