@@ -7,6 +7,12 @@ services:
       - db
     ports:
       - 3000:3000
+  carbon:
+    build: ./carbon
+    depends_on:
+      - db
+    ports:
+      - 3001:3001
   nginx:
     build: ./nginx
     ports:
@@ -14,16 +20,32 @@ services:
       - 443:443
     volumes:
       - /etc/letsencrypt/archive/thez0ne.xyz:/etc/nginx/certs
+      - /etc/letsencrypt/archive/carbon.thez0ne.xyz:/etc/nginx/certs/carbon
   db:
     image: postgres:latest
+    # build: ./db
     container_name: postgres
-    restart: always
+    restart: unless-stopped
     ports:
       - 5432:5432
-    env_file:
-      - ./db/.env
+    environment:
+      - POSTGRES_USER=username
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_MULTIPLE_DATABASES=portfolio,carbon
     volumes:
       - postgres:/var/lib/postgresql/data
+      - ./db/init_scripts:/docker-entrypoint-initdb.d
+  db-cron:
+    build: ./db
+    depends_on:
+      - db
+    container_name: cron-cleanup
+    environment:
+      - DB_CONTAINER=postgres
+      - DB_NAME=carbon
+      - DB_USER=username
+      - DB_PASSWORD=password
+    restart: unless-stopped
 
 volumes:
   postgres:

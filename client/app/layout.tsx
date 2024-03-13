@@ -54,6 +54,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  metadataBase: new URL('https://thez0ne.xyz'),
 }
 
 export default function RootLayout({

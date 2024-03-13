@@ -4,29 +4,27 @@ const prisma = new PrismaClient()
 
 async function main() {
   const project1 = await prisma.project.upsert({
-    where: { title: 'Phoenix Engine' },
+    where: { title: 'Phoenix Raytracer' },
     update: {},
     create: {
-      title: "Phoenix Engine",
+      title: "Phoenix Raytracer",
       projecttype: "Computer Graphics Development",
       inprogress: true,
       image: {
         create: {
-          src: '/phoenix.webm',
-          alt: 'Rendering Demo from the Phoenix Engine',
+          src: '/raytracer.webm',
+          alt: 'Demo of the Real Time Raytracer',
         }
       },
       technologies: [
         'C++',
-        'Vulkan',
-        'OpenGL',
         'imgui',
       ],
       links: {
         create: [
           {
             name: 'GITHUB',
-            url: 'https://github.com/thez0ne/Phoenix-Engine',
+            url: 'https://github.com/thez0ne/Phoenix-Engine/tree/main/Raytracer',
           },
           {
             name: 'DEMO',
@@ -35,12 +33,52 @@ async function main() {
         ],
       },
       description: [
-        'Developping a custom game engine from scratch tailored to my needs',
-        'Writing Code that can handle multiple different rendering APIs depending on the target platform',
+        'Building a raytracer as a demo for developing projects with the Phoenix Engine',
+        'Adapting the concepts taught in Raytracing in One Weekend to work with real time rendering',
       ],
     },
   });
+
   const project2 = await prisma.project.upsert({
+    where: { title: 'Project Carbon' },
+    update: {},
+    create: {
+      title: "Project Carbon",
+      projecttype: "Web Application",
+      inprogress: false,
+      image: {
+        create: {
+          src: '/carbon.webm',
+          alt: 'Demo of real time chat app',
+        }
+      },
+      technologies: [
+        'React',
+        'NextJS',
+        'Docker',
+        'Prisma',
+        'Socker.io',
+      ],
+      links: {
+        create: [
+          {
+            name: 'GITHUB',
+            url: 'https://github.com/thez0ne/ProjectCarbon',
+          },
+          {
+            name: 'LIVE',
+            url: 'https://carbon.thez0ne.xyz/',
+          },
+        ],
+      },
+      description: [
+        'Developing a chat app that can be used to communicate between friends via text',
+        'Collaborating with peers continuously to achieve the objectives for this project',
+      ],
+    },
+  });
+
+  const project3 = await prisma.project.upsert({
     where: { title: 'Project: FEYGO' },
     update: {},
     create: {
@@ -79,7 +117,7 @@ async function main() {
       ],
     },
   });
-  const project3 = await prisma.project.upsert({
+  const project4 = await prisma.project.upsert({
     where: { title: 'ChronoBreak' },
     update: {},
     create: {

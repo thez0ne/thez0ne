@@ -1,0 +1,3 @@
+[submodule "carbon"]
+	path = carbon
+	url = https://github.com/thez0ne/ProjectCarbon.git
