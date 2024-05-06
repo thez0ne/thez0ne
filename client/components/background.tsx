@@ -2,13 +2,13 @@
 
 import '@/styles/background.css'
 
-import { useEffect, useMemo, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { useEffect, useMemo, useState } from 'react';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
 import {
   type Container,
   type ISourceOptions,
-} from "@tsparticles/engine";
-import { loadSlim } from "@tsparticles/slim";
+} from '@tsparticles/engine';
+import { loadSlim } from '@tsparticles/slim';
 
 export default function Background() {
   const [init, setInit] = useState(false);
@@ -37,7 +37,9 @@ export default function Background() {
             enable: true,
             mode: 'repulse',
           },
-          resize: true,
+          resize: {
+            enable:true
+          },
         },
         modes: {
           repulse: {
@@ -48,10 +50,10 @@ export default function Background() {
       },
       particles: {
         color: {
-          value: "#ffffff",
+          value: '#ffffff',
         },
         links: {
-          color: "#ffffff",
+          color: '#ffffff',
           distance: 150,
           enable: true,
           opacity: 0.5,
@@ -83,7 +85,7 @@ export default function Background() {
           value: 0.5,
         },
         shape: {
-          type: "circle",
+          type: 'circle',
         },
         size: {
           value: { min: 1, max: 5 },
@@ -91,7 +93,7 @@ export default function Background() {
       },
       background: {
         color: {
-          value: "#000000",
+          value: '#000000',
         },
       },
       detectRetina: true,
@@ -102,7 +104,7 @@ export default function Background() {
   if (init) {
     return (
       <Particles
-        id="tsparticles"
+        id='tsparticles'
         particlesLoaded={particlesLoaded}
         options={options}
       />
