@@ -1,4 +1,18 @@
 /** @type {import('next').NextConfig} */
+
+const cspHeader = `
+    default-src 'self';
+    script-src 'self' 'unsafe-eval' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' https://avatars.githubusercontent.com/ blob: data:;
+    font-src 'self' https://fonts.googleapis.com;
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
+`
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -9,7 +23,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; font-src 'self' 'https://fonts.googleapis.com'; img-src 'self' 'https://avatars.githubusercontent.com/'; script-src 'self'",
+            value: cspHeader.replace(/\n/g, ''),
           },
           {
             key: 'X-Frame-Options',
@@ -25,7 +39,7 @@ const nextConfig = {
           },
           {
             key: 'Permissions-Policy',
-            value: "camera=(); battery=(); geolocation=(); microphone=()",
+            value: "camera=(), geolocation=(), microphone=()",
           },
         ],
       },
