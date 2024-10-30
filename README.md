@@ -7,7 +7,7 @@ A personal portfolio website made using NextJS, along with nginx and docker for 
 - client: the main portfolio web page
 - db: container with env and custom scripts for the main Postgresql database
 - nginx: container with the nginx configurations for deployment
-- carbon (TO BE ADDED): git submodule of a real time chat application
+- carbon: git submodule of a real time chat application
 
 ## Getting Started
 
