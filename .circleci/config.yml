@@ -34,7 +34,7 @@ jobs:
   lint:
     working_directory: ~/thez0ne/client
     docker:
-      - image: cimg/node:18.0.0
+      - image: cimg/node:18.17.0
     steps:
       - checkout:
           path: ~/thez0ne
@@ -47,7 +47,7 @@ jobs:
   vitest:
     working_directory: ~/thez0ne/client
     docker:
-      - image: cimg/node:18.0.0
+      - image: cimg/node:18.17.0
     steps:
       - checkout:
           path: ~/thez0ne
@@ -62,7 +62,7 @@ jobs:
   build:
     working_directory: ~/thez0ne/client
     docker:
-      - image: cimg/node:18.0.0
+      - image: cimg/node:18.17.0
         environment:
           DATABASE_URL: postgresql://testuser@localhost:5432/circle-test_test?schema=public
       - image: cimg/postgres:16.0
