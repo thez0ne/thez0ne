@@ -2,6 +2,8 @@ FROM node:alpine
 
 WORKDIR /app
 
+RUN apk add --no-cache openssl
+
 # RUN npm install --global pm2
 
 COPY ./package*.json ./
