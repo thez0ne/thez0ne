@@ -8,14 +8,14 @@ import {
   type Container,
   type ISourceOptions,
 } from '@tsparticles/engine';
-import { loadSlim } from '@tsparticles/slim';
+import { loadFull } from 'tsparticles';
 
 export default function Background() {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
+      await loadFull(engine);
     }).then(() => {
       setInit(true);
     });
